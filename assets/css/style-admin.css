@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    /* background: linear-gradient(100deg, #ff9102, #cfc9c9);background: rgba(134, 246, 137, 1.0); */
+    background: -webkit-linear-gradient(top left, rgba(54, 75, 210, 1.0), rgba(152, 213, 195, 1.0));
+    background: -moz-linear-gradient(top left, rgba(54, 75, 210, 1.0), rgba(152, 213, 195, 1.0));
+    background: linear-gradient(to bottom right, rgba(54, 75, 210, 1.0), rgba(152, 213, 195, 1.0));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    /*sert à positionner nos ombres par rapport au container qui contient le formulaire */
+    position: relative;
+    /* align-self: center; */
+}
+
+form {
+    /* Permet de rendre opaque le fond blanc */
+    background: rgba(255, 255, 255, .3);
+    padding: 3rem;
+    border-radius: 20px;
+    height: 380px;
+    /*on donne du reflet à notre élément */
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    /* ajout d'un effet */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-weight: 500;
+    opacity: .7;
+    font-size: 1.4rem;
+    margin-bottom: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all .3s;
+}
+
+a:hover {
+    text-shadow: 2px 2px 6px rgb(0, 0, 0);
+}
+
+input {
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    width: 200px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    -moz-backdrop-filter: blur(5px);
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, .2);
+    color: white;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    transition: all .3s;
+    margin-bottom: 2em;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:hover,
+input[type="text"]:focus {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, .2);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 1rem;
+    width: 150px;
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    body {
+        align-items: start;
+        margin-top: 150px;
+        height: auto;
+    }
+
+    html {
+        height: 100%;
+    }
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    body {
+        align-items: start;
+        margin-top: 150px;
+        height: auto;
+    }
+
+    html {
+        height: 100%;
+    }
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT SMARTPHONE */
+@media screen and (max-width: 480px) {
+    form {
+        height: 550px;
+        padding: 1rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    input {
+        padding: 1.5rem;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+    p {
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    input[type="submit"] {
+        margin-top: 2rem;
+    }
+}
+
+/* .drop {
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    -moz-backdrop-filter: blur(10px);
+    position: absolute;
+    border-left: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 10px;
+    box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, .2);
+}
+
+.firstDrop {
+    height: 80px;
+    width: 80px;
+    top: -20px;
+    left: -40px;
+    z-index: -1;
+}
+
+.secondDrop {
+    height: 80px;
+    width: 80px;
+    bottom: -30px;
+    right: 110px;
+}
+
+.thirdDrop {
+    height: 100px;
+    width: 100px;
+    bottom: 120px;
+    right: -50px;
+    z-index: -1;
+}
+
+.fourthDrop {
+    height: 120px;
+    width: 120px;
+    top: -60px;
+    right: -50px;
+}
+
+.fiveDrop {
+    height: 60px;
+    width: 60px;
+    bottom: 100px;
+    right: 500px;
+    z-index: -1;
+} */
