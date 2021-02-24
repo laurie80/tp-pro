@@ -1,5 +1,8 @@
-<!-- require "../Controllers/admin_controller.php"; -->
+<?php
 
+require "../Controllers/admin_controller.php";
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -16,18 +19,20 @@
 
     <div class="container">
 
-        <form action="galery.php" method="post">
+        <form action="admin.php" method="post">
 
             <p>Bonjour</p>
             <p>Bienvenue dans votre Espace Administrateur</p>
             <div>
                 <input type="text" id="userName" name="userName" placeholder="Nom d'utilisateur">
+                <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
             </div>
             <div>
                 <input type="password" id="password" name="password" placeholder="Mot de passe">
+                <p class="errors"><?= isset($arrayErrors["password"]) ? $arrayErrors["password"] : "" ?></p>
             </div>
             <div>
-                <input type="submit" value="Connexion">
+                <input type="submit" name="connectAdmin" value="Connexion">
             </div>
         </form>
 

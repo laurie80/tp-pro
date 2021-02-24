@@ -36,8 +36,14 @@ p {
     font-weight: 500;
     opacity: .7;
     font-size: 1.4rem;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+}
+
+.errors {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0.5rem;
 }
 
 a {
@@ -71,7 +77,8 @@ input {
     font-weight: 500;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     transition: all .3s;
-    margin-bottom: 2em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 ::placeholder {
@@ -94,51 +101,30 @@ input[type="submit"] {
     font-weight: bold;
 }
 
-/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD */
-@media screen and (min-width: 480px) and (max-width: 768px) {
-    body {
-        align-items: start;
-        margin-top: 150px;
-        height: auto;
-    }
-
-    html {
-        height: 100%;
-    }
-}
-
-/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    body {
-        align-items: start;
-        margin-top: 150px;
-        height: auto;
-    }
-
-    html {
-        height: 100%;
-    }
-}
-
 /* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT SMARTPHONE */
 @media screen and (max-width: 480px) {
     form {
-        height: 550px;
+        height: 450px;
         padding: 1rem;
         margin-left: 2rem;
         margin-right: 2rem;
     }
+
     input {
-        padding: 1.5rem;
+        padding: 1rem;
         margin-top: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
+
     p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         margin-top: 30px;
         margin-bottom: 30px;
     }
+
     input[type="submit"] {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        font-size: 0.7rem;
+        width: 125px;
     }
 }
