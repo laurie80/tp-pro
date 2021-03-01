@@ -21,6 +21,7 @@ require "../Controllers/galery_controller.php";
             <div class="backdrop"></div>
             <ul>
                 <li><a class="navLink nav-link btn text-navbar" href="../index.php">Retour sur le site</a></li>
+                <li><a class="navLink nav-link btn text-navbar" href="galery.php?action=disconnect">Deconnexion</a></li>
             </ul>
         </nav>
 

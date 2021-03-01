@@ -1,5 +1,8 @@
+<?php
 
-<!-- require "Controllers/index_controller.php"; -->
+require "Controllers/index_controller.php";
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -26,8 +29,8 @@
                 <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
                 <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
                 <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="Views/admin.php">Espace Admin</a></li>
-            </ul>
+                <li><a class="navLink nav-link btn text-navbar" href="<?= isset($_SESSION["admin"]) ? "Views/galery.php" : "Views/admin.php" ?>">Espace Admin</a></li>
+                </ul>
         </nav>
 
         <button class="menu">Menu</button>
@@ -43,8 +46,7 @@
 
         <div class="row align-content-center justify-content-center" id="presentation">
             <div class="logoEnts col-xl-4 col-lg-8 col-md-10 col-sm-8 d-flex align-content-center justify-content-center">
-                <img class="logoImg d-flex align-content-center justify-content-center" src="image/logo-remove-in2.png"
-                    alt="Logo Vision By Sky">
+                <img class="logoImg d-flex align-content-center justify-content-center" src="image/logo-remove-in2.png" alt="Logo Vision By Sky">
             </div>
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12">A propos</h1>
@@ -93,8 +95,7 @@
                 <h1 class="text-center">Drones</h1>
             </div>
             <div class="card col-lg-4 col-md-8 col-sm-12 align-items-center justify-content-center">
-                <img class="card-img-top firstDrone" src="image/drone_11-remove.png"
-                    alt="Drone professionnel modèle n°1">
+                <img class="card-img-top firstDrone" src="image/drone_11-remove.png" alt="Drone professionnel modèle n°1">
                 <div class="card-body h-100">
                     <h2 class="nameEquipments text-center">Inspire 2</h2>
                     <div class="card-text">
@@ -129,33 +130,33 @@
                 <form class="form" action="index.php" method="post">
                     <div>
                         <label for="lastname">Nom :</label>
-                        <input type="text" name="lastname" id="lastname" class="form-control"
-                            placeholder="Exemple : Dupont">
+                        <input type="text" name="lastname" id="lastname" class="form-control" placeholder="Exemple : Dupont">
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
                     <div>
                         <label for="firstname">Prénom :</label>
-                        <input type="text" name="firstname" id="firstname" class="form-control"
-                            placeholder="Exemple : Jean">
+                        <input type="text" name="firstname" id="firstname" class="form-control" placeholder="Exemple : Jean">
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
                     <div>
                         <label for="email">Adresse email :</label>
-                        <input type="email" name="email" id="email" class="form-control"
-                            placeholder="Exemple : dupont@gmail.com">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Exemple : dupont@gmail.com">
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
                     <div>
                         <label for="phoneNumber">Numéro de téléphone :</label>
-                        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" class="form-control"
-                            placeholder="Exemple : 0... ou +33...">
+                        <input type="phoneNumber" name="phoneNumber" id="phoneNumber" class="form-control" placeholder="Exemple : 0... ou +33...">
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
                     <div>
                         <label for="natureRequest">Nature de la demande :</label>
-                        <input type="text" name="natureRequest" id="natureRequest" class="form-control"
-                            placeholder="Exemple : Demande d'informations">
+                        <input type="text" name="natureRequest" id="natureRequest" class="form-control" placeholder="Exemple : Demande d'informations">
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
                     <div>
                         <label for="request">Votre demande :</label>
-                        <textarea id="request" name="request" rows="5"
-                            placeholder="Exemple : Je souhaiterais ..."></textarea>
+                        <textarea id="request" name="request" rows="5" placeholder="Exemple : Je souhaiterais ..."></textarea>
+                        <p class="errors"><?= isset($arrayErrors["userName"]) ? $arrayErrors["userName"] : "" ?></p>
                     </div>
 
                     <div class="d-flex justify-content-center">
@@ -174,8 +175,7 @@
                     <p class="text-center"><span class="h3">nicolas.manna@icloud.com</span></p>
                 </div>
                 <div class="divLogo col-lg-6 col-md-6 col-sm-12 d-flex align-content-center justify-content-center">
-                    <img class="logoFooter d-flex align-content-center justify-content-center"
-                        src="image/logo-remove.png" alt="Logo Vision By Sky">
+                    <img class="logoFooter d-flex align-content-center justify-content-center" src="image/logo-remove.png" alt="Logo Vision By Sky">
                 </div>
             </div>
         </footer>

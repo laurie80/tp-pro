@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+if(isset($_GET["action"]) && $_GET["action"] == "disconnect") {
+    unset($_SESSION["admin"]);
+    session_destroy();
+    header("Location: ../index.php");
+}
+
 // require "../Models/Database.php";
 // require "../Models/Admin.php";
 // require "../Models/Gallery_Pictures.php";
@@ -19,7 +27,8 @@ if (isset($_FILES['fileToUpload']) and $_FILES['fileToUpload']['error'] == 0) {
     ];
     if (in_array($extension_upload, $extensions_autorisees)) {
         $extensionFile = strrchr($_FILES["fileToUpload"]["name"], ".");
-        move_uploaded_file($_FILES['fileToUpload']['tmp_name'], '../uploadImg/' . uniqid($_FILES['fileToUpload']['name']) . $extensionFile);
+        $nameImg = uniqid($_FILES['fileToUpload']['name']);
+        move_uploaded_file($_FILES['fileToUpload']['tmp_name'], '../uploadImg/' . $nameImg . $extensionFile);
         echo '<script>alert("L\'image à bien était téléchargé !")</script>';
     } else {
         echo '<script>alert("Format d\'image incorrect")</script>';
@@ -36,9 +45,11 @@ if (isset($_FILES['fileVideoToUpload']) and $_FILES['fileVideoToUpload']['error'
     ];
     if (in_array($extension_upload, $extensions_autorisees)) {
         $extensionFile = strrchr($_FILES["fileVideoToUpload"]["name"], ".");
-        move_uploaded_file($_FILES['fileVideoToUpload']['tmp_name'], '../uploadVideo/' . uniqid($_FILES['fileVideoToUpload']['name']) . $extensionFile);
+        $nameVideo = uniqid($_FILES['fileVideoToUpload']['name']);
+        move_uploaded_file($_FILES['fileVideoToUpload']['tmp_name'], '../uploadVideo/' . $nameVideo . $extensionFile);
         echo '<script>alert("La vidéo à bien était téléchargé !")</script>';
     } else {
         echo '<script>alert("Format de vidéo incorrect")</script>';
     }
 }
+

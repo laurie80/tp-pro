@@ -35,7 +35,6 @@ require "../Controllers/admin_controller.php";
                 <input type="submit" name="connectAdmin" value="Connexion">
             </div>
         </form>
-
         <div>
             <a href="../index.php">Retour sur le site</a>
         </div>
