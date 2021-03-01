@@ -85,6 +85,19 @@ input {
     color: white;
 }
 
+.revealPassword {
+    position: relative;
+}
+
+#btnRevealPassword {
+    border: none;
+    background: rgba(64, 255, 230, .7);
+    font-size: 1rem;
+    position: absolute;
+    top: 2rem;
+    right: auto;
+}
+
 input:hover,
 input[type="text"]:focus {
     background: rgba(255, 255, 255, .1);
@@ -126,5 +139,9 @@ input[type="submit"] {
         margin-top: 1rem;
         font-size: 0.7rem;
         width: 125px;
+    }
+
+    #btnRevealPassword {
+        font-size: 0.8rem;
     }
 }

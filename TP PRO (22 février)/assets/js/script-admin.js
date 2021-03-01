@@ -1,15 +1,18 @@
 /* :::::::::::::::::::::::::::::::::
-MEN NAVIG PLEIN ECRAN
+CONTROLE VUE PASSWORD
 ::::::::::::::::::::::::::::::::: */
 
-const button = document.querySelector('button');
-const nav = document.querySelector('nav');
-const backdrop = document.querySelector('.backdrop');
+let togglePassword = document.getElementById("togglePassword");
+let input = document.querySelector(".revealPassword input");
 
-button.addEventListener('click', () => {
-  nav.classList.add('open');
-});
+togglePassword.addEventListener("click", showPassword);
 
-backdrop.addEventListener('click', () => {
-    nav.classList.remove('open');
-    });
+function showPassword () {
+    if (input.type == "password") {
+        input.type = "text";
+        togglePassword.className = "fas fa-eye";
+    } else {
+        input.type = "password";
+        togglePassword.className = "fa fa-eye-slash";
+    }
+}

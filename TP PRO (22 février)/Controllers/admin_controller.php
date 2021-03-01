@@ -10,7 +10,7 @@ require "../Models/Admin.php";
 
 if (isset($_POST["connectAdmin"])) {
 
-    $regexUsername = "/^[a-zA-Z0-9éèàëïä -]{3,20}$/";
+    $regexUsername = "/^[a-zA-Z0-9éèàëïä -]{5,20}$/";
     $regexPassword = "/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-z^A-Z^0-9]).{8,}$/";
 
     $arrayErrors = [];
@@ -20,7 +20,7 @@ if (isset($_POST["connectAdmin"])) {
         if (preg_match($regexUsername, $_POST["userName"])) {
             $securedUsername = htmlspecialchars($_POST["userName"]);
         } else {
-            $arrayErrors["userName"] = "Champ 'Nom d'utilisateur' non valide, veuillez réessayer.";
+            $arrayErrors["userName"] = "Champ 'Nom d'utilisateur' non valide.";
         }
         if (empty($_POST["userName"])) {
             $arrayErrors["userName"] = "Veuillez renseigner le champ";
@@ -31,7 +31,7 @@ if (isset($_POST["connectAdmin"])) {
         if (preg_match($regexPassword, $_POST["password"])) {
             $securedPassword = $_POST["password"];
         } else {
-            $arrayErrors["password"] = "Champ 'Mot de passe' non valide, veuillez réessayer.";
+            $arrayErrors["password"] = "Champ 'Mot de passe' non valide.";
         }
         if (empty($_POST["password"])) {
             $arrayErrors["password"] = "Veuillez renseigner le champ";
@@ -52,9 +52,15 @@ if (isset($_POST["connectAdmin"])) {
                 header("Location: ../Views/galery.php");
             }
         } else {
-            $arrayErrors["userName"] = "Champ 'Nom d'utilisateur' non valide, veuillez réessayer.";
+            $arrayErrors["userName"] = "Vérifier vos informations de connexion";
+            $arrayErrors["password"] = "Vérifier vos informations de connexion";
+
         }
     } else {
-        $arrayErrors["userName"] = "Veuillez renseigner le champ";
+        if (!isset($arrayErrors["userName"])) {
+            $arrayErrors["userName"] = "Veuillez renseigner le champ";
+        }
     }
 }
+
+
