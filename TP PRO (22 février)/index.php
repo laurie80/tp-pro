@@ -21,16 +21,33 @@ require "Controllers/index_controller.php";
 <body>
 
     <header>
+
         <nav>
             <div class="backdrop"></div>
-            <ul>
-                <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="<?= isset($_SESSION["admin"]) ? "Views/galery.php" : "Views/admin.php" ?>">Espace Admin</a></li>
-                </ul>
+                <?php
+                    if (isset($_SESSION["admin"])) {
+                ?>
+                    <ul>
+                        <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="Views/galery.php">Espace Admin</a></li>
+                    </ul>
+                <?php
+                    } else {
+                ?>
+                    <ul>
+                        <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
+                        <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
+                    </ul>
+                <?php
+                    }
+                ?>
         </nav>
 
         <button class="menu">Menu</button>
@@ -40,6 +57,7 @@ require "Controllers/index_controller.php";
                 <source src="video/pic-du-midi_2.mp4" type="video/mp4">
             </video>
         </div>
+        
     </header>
 
     <div class="container-fluid col-12 p-0 m-0">

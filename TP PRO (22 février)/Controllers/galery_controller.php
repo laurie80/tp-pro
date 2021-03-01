@@ -2,6 +2,10 @@
 
 session_start();
 
+if(!isset($_SESSION["admin"])) {
+    header("Location: ../index.php");
+}
+
 if(isset($_GET["action"]) && $_GET["action"] == "disconnect") {
     unset($_SESSION["admin"]);
     session_destroy();
@@ -14,9 +18,10 @@ if(isset($_GET["action"]) && $_GET["action"] == "disconnect") {
 // require "../Models/Gallery_Videos.php";
 // require "../Models/Extensions.php";
 
-// <!-- UPLOAD DE FICHIER AVEC PREVIEW PHP -->
 
-// Images
+/** 
+ * UPLOAD IMAGES
+ */
 
 if (isset($_FILES['fileToUpload']) and $_FILES['fileToUpload']['error'] == 0) {
     $infosfichier = pathinfo($_FILES['fileToUpload']['name']);
@@ -35,7 +40,11 @@ if (isset($_FILES['fileToUpload']) and $_FILES['fileToUpload']['error'] == 0) {
     }
 }
 
-// Vidéos
+
+/** 
+ * UPLOAD VIDEOS
+ */
+
 if (isset($_FILES['fileVideoToUpload']) and $_FILES['fileVideoToUpload']['error'] == 0) {
     $infosfichier = pathinfo($_FILES['fileVideoToUpload']['name']);
     $extension_upload = mime_content_type($_FILES['fileVideoToUpload']['tmp_name']);
