@@ -178,6 +178,16 @@ ul li .navLink:hover {
     font-family: "bladesinger", sans-serif;
 }
 
+.boxPicture {
+    margin: 1rem;
+    justify-content: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    max-width: 400px;
+    max-height: 400px;
+}
+
 /* :::::::CITATIONS::::::: */
 
 #citations {
@@ -235,6 +245,16 @@ ul li .navLink:hover {
     color: #35d0ba;
     font-size: 4rem;
     font-family: "bladesinger", sans-serif;
+}
+
+.boxVideos {
+    margin: 1rem;
+    justify-content: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 /* :::::::EQUIPEMENTS::::::: */

@@ -24,30 +24,30 @@ require "Controllers/index_controller.php";
 
         <nav>
             <div class="backdrop"></div>
-                <?php
-                    if (isset($_SESSION["admin"])) {
-                ?>
-                    <ul>
-                        <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="Views/upload_galery.php">Espace Admin</a></li>
-                    </ul>
-                <?php
-                    } else {
-                ?>
-                    <ul>
-                        <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
-                        <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
-                    </ul>
-                <?php
-                    }
-                ?>
+            <?php
+            if (isset($_SESSION["admin"])) {
+            ?>
+                <ul>
+                    <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="Views/upload_galery.php">Espace Admin</a></li>
+                </ul>
+            <?php
+            } else {
+            ?>
+                <ul>
+                    <li><a class="navLink nav-link btn text-navbar" href="#presentation">À propos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#galleryPict">Photos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
+                </ul>
+            <?php
+            }
+            ?>
         </nav>
 
         <button class="menu">Menu</button>
@@ -57,7 +57,7 @@ require "Controllers/index_controller.php";
                 <source src="video/pic-du-midi_2.mp4" type="video/mp4">
             </video>
         </div>
-        
+
     </header>
 
     <div class="container-fluid col-12 p-0 m-0">
@@ -80,8 +80,21 @@ require "Controllers/index_controller.php";
         <div class="row" id="galleryPict">
             <div class="col-lg-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12"><span class="titlePicture"></span></h1>
-                <!-- <p>Faire une page admin avec upload de fichiers photos qui s'insére dans cette section avec des cards
-                    bootstrap.</p> -->
+                <div class="card-column col-10 m-auto">
+                    <div class="row">
+                        <?php
+                        foreach ($filesImg as $image) {
+                            if (!is_dir("uploadImg/$image")) {
+                        ?>
+                                <div class="mx-auto">
+                                    <img class="boxPicture" src="uploadImg/<?= $image ?>">
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -105,6 +118,21 @@ require "Controllers/index_controller.php";
         <div class="row" id="galleryVid">
             <div class="col-lg-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12"><span class="titleVideo"></span></h1>
+                <div class="card-column col-10 m-auto">
+                    <div class="row">
+                        <?php
+                        foreach ($filesVideo as $video) {
+                            if (!is_dir("uploadVideo/$video")) {
+                        ?>
+                                <div class="mx-auto">
+                                    <video class="boxVideos" src="uploadVideo/<?= $video ?>" autoplay muted loop></video>
+                                </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
 

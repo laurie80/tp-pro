@@ -2,6 +2,10 @@
 
 session_start();
 
+/**
+ * FORMULAIRE DE CONTACT
+ */
+
 if (isset($_POST["submitButton"])) {
 
     $regexName = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$/";
@@ -72,3 +76,13 @@ if (isset($_POST["submitButton"])) {
         $message = "Une erreur s'est produite lors de l'envoi de votre message. Merci de renouveller votre demande.";
     }
 }
+
+/**
+ * GALERIES PHOTOS ET VIDEOS
+ */
+
+$dirImg = "uploadImg";
+$filesImg = scandir($dirImg);
+
+$dirVideo = "uploadVideo";
+$filesVideo = scandir($dirVideo);
