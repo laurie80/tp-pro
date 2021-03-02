@@ -36,7 +36,6 @@ PAGE ACCUEIL
     cursor: pointer;
     transition: all .1s;
     z-index: 1;
-    /* width: 20%; */
     font-size: 3rem;
 }
 

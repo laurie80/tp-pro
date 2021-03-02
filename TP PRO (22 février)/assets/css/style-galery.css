@@ -218,6 +218,15 @@ input[type=file]::-webkit-file-upload-button {
     font-weight: bold;
 }
 
+.btnPreviewGalery {
+    background-color: #35d0ba;
+    border-radius: 30px;
+    color: #fcc200;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
 /* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
