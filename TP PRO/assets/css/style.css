@@ -1,0 +1,495 @@
+@font-face 
+{
+font-family: "bladesinger";
+src: url("../fonts/bladesinger.ttf") format("truetype");
+}
+
+@font-face 
+{
+    font-family: "AlexBrush-Regular";
+    src: url("../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: black;
+}
+
+/* :::::::::::::::::::::::::
+PAGE ACCUEIL
+:::::::::::::::::::::::::::: */
+
+.menu {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background-color: #fcc200;
+    color: white;
+    border: none;
+    padding: 1.5rem 2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all .1s;
+    z-index: 1;
+    font-size: 3rem;
+}
+
+.menu:hover {
+    background: #35d0ba;
+}
+
+nav {
+    position: absolute;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    z-index: 2;
+}
+
+ul li {
+    text-align: center;
+    animation: .3s print;
+}
+
+ul li .navLink {
+    text-decoration: none;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+ul li .navLink:hover {
+    color: #fcc200;
+
+}
+
+.open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .9);
+    cursor: pointer;
+    animation: fade .1s;
+    z-index: 1;
+}
+
+@keyframes print {
+    from {
+        margin-top: -50px;
+        opacity: 0;
+    }
+
+    to {
+        margin-top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* :::::::VIDEO::::::: */
+
+.homeVideo video {
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+/* :::::::A PROPOS::::::: */
+
+#presentation {
+    /* display: flex; */
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+#presentation h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #35d0ba;
+    font-size: 4rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.text-presentation {
+    font-size: 1.5rem;
+}
+
+.logoEnts {
+    background-color: white;
+    margin-top: 2rem;
+    background-color: black;
+}
+
+.logoImg {
+    width: 85%;
+    height: 85%;
+}
+
+/* :::::::GALERIE PHOTOS::::::: */
+
+#galleryPict {
+    /* display: flex; */
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+#galleryPict h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #35d0ba;
+    font-size: 4rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.boxPicture {
+    justify-content: center;
+    border-radius: 5px;
+    max-width: 600px;
+    max-height: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+/* :::::::CITATIONS::::::: */
+
+#citations {
+    font-size: 6rem;
+    font-family: curve;
+    line-height: 8rem;
+    letter-spacing: 2px;
+    color: #1818CC;
+    font-style: italic;
+    font-family: "AlexBrush-Regular";
+}
+
+#citations:before {
+    content: open-quote;
+}
+
+#citations:after {
+    content: close-quote;
+}
+
+#author {
+    font-size: 1.5rem;
+    color: #1818CC;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    font-family: "glimmer-of-light";
+}
+
+.btn-citation {
+    background: #35d0ba;
+    background: -webkit-linear-gradient(to right, #35d0ba, #b7f1e9);
+    background: linear-gradient(to right, #35d0ba, #b7f1e9);
+    cursor: pointer;
+    border-radius: 3rem;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 24px;
+}
+
+/* :::::::GALERIE VIDEOS::::::: */
+
+#galleryVid {
+    /* display: flex; */
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+#galleryVid h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #35d0ba;
+    font-size: 4rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.boxVideos {
+    margin: 1rem;
+    justify-content: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    max-width: 600px;
+    max-height: 600px;
+}
+
+/* :::::::EQUIPEMENTS::::::: */
+
+#equipments {
+    /* display: flex; */
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+#equipments h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #35d0ba;
+    font-size: 4rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.firstDrone {
+    width: 18rem;
+    height: auto;
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+.secondDrone {
+    width: 18rem;
+    height: auto;
+    margin-top: 3rem;
+    margin-right: 0;
+    margin-bottom: 3rem;
+    margin-left: 0;
+}
+
+.nameEquipments {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: #fcc200;
+    font-size: 2.5rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.card-text {
+    color: black;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
+
+}
+
+.card {
+    margin: 2rem;
+}
+
+/* :::::::CONTACT::::::: */
+
+#contact {
+    /* display: flex; */
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+#contact h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: #35d0ba;
+    font-size: 4rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+label {
+    color: #1818CC;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+textarea {
+    width: 100%;
+}
+
+#lastname::placeholder,
+#firstname::placeholder,
+#email::placeholder,
+#phoneNumber::placeholder,
+#natureRequest::placeholder,
+#request::placeholder {
+    color: black;
+    font-style: italic;
+}
+
+.button {
+    margin: 1.5rem;
+    padding: 1.5rem;
+    width: 10rem;
+    border-radius: 40px;
+    background-color: #fcc200;
+    color: #1818CC;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* :::::::FOOTER::::::: */
+
+#infosFooter {
+    /* display: flex; */
+    background-color: #fcc200;
+    margin-top: 1rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    margin-left: 0;
+}
+
+.informations {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    line-height: 3rem;
+}
+
+.divLogo {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: auto;
+}
+
+.logoFooter {
+    width: 60%;
+    height: auto;
+}
+
+/* Modification du visuel smartphone en responsive avec les medias queries */
+
+@media screen and (max-width: 480px) {
+
+    .menu {
+        top: 0.5rem;
+        left: 0.5rem;
+        font-size: 1.5rem;
+        padding: 0.8rem 1.3rem;
+    }
+
+    #presentation h1,
+    #galleryPict h1,
+    #galleryVid h1,
+    #equipments h1,
+    #contact h1 {
+        font-size: 2.5rem;
+    }
+
+    .logoImg {
+        width: 65%;
+        height: auto;
+    }
+
+    #presentation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .text-presentation {
+        font-size: 1.2rem;
+    }
+
+    #author {
+        font-size: 0.9rem;
+    }
+
+    #citations {
+        font-size: 2.3rem;
+        line-height: 3.5rem;
+        letter-spacing: 1.5px;
+    }
+
+    .btn-citation {
+        font-size: 0.8rem;
+        padding: 12px;
+    }
+
+    .firstDrone {
+        width: 14rem;
+    }
+
+    .secondDrone {
+        width: 14rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        line-height: 1.5rem;
+    }
+
+    .informations {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: 1rem;
+    }
+
+    .divLogo {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .button {
+        margin: 1rem;
+        padding: 1rem;
+        width: 8rem;
+        font-size: 1rem;
+    }
+
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+ 
+    #citations {
+        font-size: 4rem;
+        line-height: 5.5rem;
+        letter-spacing: 1px;
+    }
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    #citations {
+        font-size: 5rem;
+        line-height: 7rem;
+        letter-spacing: 1px;
+    }
+}
