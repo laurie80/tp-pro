@@ -13,17 +13,18 @@ if(isset($_GET["action"]) && $_GET["action"] == "disconnect") {
 }
 
 require "../Models/Database.php";
-// require "../Models/Admin.php";
+require "../Models/Extensions.php";
 require "../Models/Gallery_Pictures.php";
 require "../Models/Gallery_Videos.php";
-require "../Models/Extensions.php";
 
 
 /** 
  * UPLOAD IMAGES
  */
 
-if (isset($_FILES['fileToUpload']) and $_FILES['fileToUpload']['error'] == 0) {
+isset($_POST['namePicture']) ? $pictureTitle = $_POST['namePicture'] : "";
+
+if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] == 0 && isset($pictureTitle)) {
     $infosfichier = pathinfo($_FILES['fileToUpload']['name']);
     $extension_upload = mime_content_type($_FILES['fileToUpload']['tmp_name']);
     $extensions_autorisees = [
@@ -52,7 +53,9 @@ if (isset($_FILES['fileToUpload']) and $_FILES['fileToUpload']['error'] == 0) {
  * UPLOAD VIDEOS
  */
 
-if (isset($_FILES['fileVideoToUpload']) and $_FILES['fileVideoToUpload']['error'] == 0) {
+isset($_POST['nameVideo']) ? $videoTitle = $_POST['nameVideo'] : "";
+
+if (isset($_FILES['fileVideoToUpload']) && $_FILES['fileVideoToUpload']['error'] == 0 && isset($videoTitle)) {
     $infosfichier = pathinfo($_FILES['fileVideoToUpload']['name']);
     $extension_upload = mime_content_type($_FILES['fileVideoToUpload']['tmp_name']);
     $extensions_autorisees = [

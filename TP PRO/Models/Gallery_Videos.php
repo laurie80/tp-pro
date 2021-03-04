@@ -96,7 +96,7 @@ class GalleryVideos extends Database {
      * Méthode pour ajouter les informations d'une vidéo en Base De Données
      */
     public function addVideo(string $videoName, string $videoDate, string $videoTitle, int $id_extensions_files) {
-        $query = "INSERT INTO `gallery_videos` (`video_name`, `video_date`, `video_title`, `id_extensions_files`) VALUES (:video_Video, :video_date, :video_title, :id_extensions_files);";
+        $query = "INSERT INTO `gallery_videos` (`video_name`, `video_date`, `video_title`, `id_extensions_files`) VALUES (:video_name, :video_date, :video_title, :id_extensions_files);";
         $buildQuery = parent::getDb()->prepare($query);
         $buildQuery->bindValue("video_name", $videoName, PDO::PARAM_STR);
         $buildQuery->bindValue("video_date", $videoDate, PDO::PARAM_STR);
