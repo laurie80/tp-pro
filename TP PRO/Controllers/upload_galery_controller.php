@@ -61,13 +61,17 @@ if (isset($_FILES['fileVideoToUpload']) and $_FILES['fileVideoToUpload']['error'
     ];
     if (in_array($extension_upload, $extensions_autorisees)) {
         $Extensions = new Extensions();
-
+        $GalleryVideo = new GalleryVideos();
         $extensionFile = strrchr($_FILES["fileVideoToUpload"]["name"], ".");
+        $id = $Extensions->getIdExtensions($extensionFile);
+        $date = strftime("%Y-%m-%d", time());
         $nameVideo = uniqid();
         move_uploaded_file($_FILES['fileVideoToUpload']['tmp_name'], '../uploadVideo/' . $nameVideo . $extensionFile);
+        $GalleryVideo->addVideo($nameVideo, $date, $videoTitle, $id["id"]);
         echo '<script>alert("La vidéo à bien était téléchargé !")</script>';
     } else {
         echo '<script>alert("Format de vidéo incorrect")</script>';
     }
 }
+
 
