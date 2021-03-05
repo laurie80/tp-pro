@@ -116,7 +116,7 @@ require "Controllers/index_controller.php";
         <div class="row" id="galleryVid">
             <div class="col-lg-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12"><span class="titleVideo"></span></h1>
-                <div class="card-column col-10 m-auto">
+                <div class="card-column col-12 m-auto">
                     <div class="row">
                         <?php
                         foreach ($filesVideo as $video) {

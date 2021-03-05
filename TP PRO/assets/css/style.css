@@ -163,7 +163,6 @@ ul li .navLink:hover {
 /* :::::::GALERIE PHOTOS::::::: */
 
 #galleryPict {
-    /* display: flex; */
     margin-top: 1rem;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -203,7 +202,7 @@ ul li .navLink:hover {
 /* :::::::CITATIONS::::::: */
 
 #citations {
-    font-size: 6rem;
+    font-size: 5rem;
     font-family: curve;
     line-height: 8rem;
     letter-spacing: 2px;
@@ -244,7 +243,6 @@ ul li .navLink:hover {
 /* :::::::GALERIE VIDEOS::::::: */
 
 #galleryVid {
-    /* display: flex; */
     margin-top: 1rem;
     margin-right: 0;
     margin-bottom: 1rem;
@@ -265,8 +263,8 @@ ul li .navLink:hover {
     border: solid 1px white;
     border-radius: 5px;
     box-shadow: 1px 1px 1px black;
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 900px;
+    max-height: 900px;
 }
 
 /* :::::::EQUIPEMENTS::::::: */
@@ -411,10 +409,15 @@ textarea {
 @media screen and (max-width: 480px) {
 
     .menu {
-        top: 0.5rem;
-        left: 0.5rem;
-        font-size: 1.5rem;
-        padding: 0.8rem 1.3rem;
+        font-size: 1rem;
+        top: 2rem;
+        left: 1rem;
+        padding: 0.7rem 1rem;
+
+    }
+
+    ul li .navLink {
+        font-size: 2rem;
     }
 
     #presentation h1,
@@ -444,7 +447,7 @@ textarea {
     }
 
     #citations {
-        font-size: 2.3rem;
+        font-size: 2.1rem;
         line-height: 3.5rem;
         letter-spacing: 1.5px;
     }
@@ -454,12 +457,21 @@ textarea {
         padding: 12px;
     }
 
+    #gridImgContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .boxVideos {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
     .firstDrone {
-        width: 14rem;
+        width: 12rem;
     }
 
     .secondDrone {
-        width: 14rem;
+        width: 12rem;
     }
 
     .card-text {
@@ -489,16 +501,32 @@ textarea {
 
 /* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD */
 @media screen and (min-width: 480px) and (max-width: 768px) {
- 
+    
+    .menu {
+        font-size: 2rem;
+        top: 3rem;
+        padding: 1rem 1.3rem;
+    }
+
     #citations {
         font-size: 4rem;
         line-height: 5.5rem;
         letter-spacing: 1px;
     }
+
+    .boxVideos {
+        max-width: 700px;
+        max-height: 700px;
+    }
 }
 
 /* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .menu {
+        font-size: 2.5rem;
+        top: 3rem;
+    }
 
     #citations {
         font-size: 5rem;

@@ -191,6 +191,19 @@ ul li .navLink:hover {
         font-size: 3rem;
     }
 
+    .boxPicture {
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .boxVideos {
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .infosFiles {
+        font-size: 1.2rem;
+    }
 }
 
 /* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT SMARTPHONE */
@@ -230,4 +243,13 @@ ul li .navLink:hover {
         font-size: 1.7rem;
     }
 
+    .boxPicture {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .boxVideos {
+        max-width: 300px;
+        max-height: 300px;
+    }
 }
