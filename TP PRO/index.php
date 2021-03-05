@@ -77,23 +77,21 @@ require "Controllers/index_controller.php";
             </div>
         </div>
 
-        <div class="row" id="galleryPict">
+        <div id="galleryPict">
             <div class="col-lg-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12"><span class="titlePicture"></span></h1>
-                <div class="card-column col-10 m-auto">
-                    <div class="row w-100 m-0">
-                        <?php
-                        foreach ($filesImg as $image) {
-                            if (!is_dir("uploadImg/$image")) {
-                        ?>
-                                <div class="m-0 p-0">
-                                    <img class="boxPicture" src="uploadImg/<?= $image ?>">
-                                </div>
-                        <?php
-                            }
+                <div id="gridImgContainer">
+                    <?php
+                    foreach ($filesImg as $image) {
+                        if (!is_dir("uploadImg/$image")) {
+                    ?>
+                            <div class="imgContainer">
+                                <img class="imgInContainer" src="uploadImg/<?= $image ?>">
+                            </div>
+                    <?php
                         }
-                        ?>
-                    </div>
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -226,7 +224,7 @@ require "Controllers/index_controller.php";
             </div>
         </footer>
     </div>
-    
+
     <script src="assets/js/script.js"></script>
 
 </body>

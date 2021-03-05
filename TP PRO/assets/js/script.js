@@ -68,4 +68,3 @@ $(document).ready(() => {
   loop: true
 });
 });
-
