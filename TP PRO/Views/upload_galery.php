@@ -35,7 +35,7 @@ require "../Controllers/upload_galery_controller.php";
 
     <div class="row align-content-center justify-content-center" id="form">
 
-        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue dans votre espace de gestion de galeries</p>
+        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue dans votre espace de téléchargements</p>
 
         <form class="col-10 d-flex flex-wrap align-content-center justify-content-center m-3" action="upload_galery.php" method="post" enctype="multipart/form-data">
 

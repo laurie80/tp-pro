@@ -1,20 +1,22 @@
 <?php
 
-class GalleryVideos extends Database {
+class GalleryVideos extends Database
+{
 
     private $id;
     private $videoName;
     private $videoDate;
     private $idExtensionsFiles;
 
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
     }
 
 
     /**
      * Get the value of id
-     */ 
+     */
     public function getId()
     {
         return $this->id;
@@ -24,7 +26,7 @@ class GalleryVideos extends Database {
      * Set the value of id
      *
      * @return  self
-     */ 
+     */
     public function setId($id)
     {
         $this->id = $id;
@@ -34,7 +36,7 @@ class GalleryVideos extends Database {
 
     /**
      * Get the value of videoName
-     */ 
+     */
     public function getVideoName()
     {
         return $this->videoName;
@@ -44,7 +46,7 @@ class GalleryVideos extends Database {
      * Set the value of videoName
      *
      * @return  self
-     */ 
+     */
     public function setVideoName($videoName)
     {
         $this->videoName = $videoName;
@@ -54,7 +56,7 @@ class GalleryVideos extends Database {
 
     /**
      * Get the value of videoDate
-     */ 
+     */
     public function getVideoDate()
     {
         return $this->videoDate;
@@ -64,7 +66,7 @@ class GalleryVideos extends Database {
      * Set the value of videoDate
      *
      * @return  self
-     */ 
+     */
     public function setVideoDate($videoDate)
     {
         $this->videoDate = $videoDate;
@@ -74,7 +76,7 @@ class GalleryVideos extends Database {
 
     /**
      * Get the value of idExtensionsFiles
-     */ 
+     */
     public function getIdExtensionsFiles()
     {
         return $this->idExtensionsFiles;
@@ -84,7 +86,7 @@ class GalleryVideos extends Database {
      * Set the value of idExtensionsFiles
      *
      * @return  self
-     */ 
+     */
     public function setIdExtensionsFiles($idExtensionsFiles)
     {
         $this->idExtensionsFiles = $idExtensionsFiles;
@@ -92,10 +94,11 @@ class GalleryVideos extends Database {
         return $this;
     }
 
-        /**
+    /**
      * Méthode pour ajouter les informations d'une vidéo en Base De Données
      */
-    public function addVideo(string $videoName, string $videoDate, string $videoTitle, int $id_extensions_files) {
+    public function addVideo(string $videoName, string $videoDate, string $videoTitle, int $id_extensions_files)
+    {
         $query = "INSERT INTO `gallery_videos` (`video_name`, `video_date`, `video_title`, `id_extensions_files`) VALUES (:video_name, :video_date, :video_title, :id_extensions_files);";
         $buildQuery = parent::getDb()->prepare($query);
         $buildQuery->bindValue("video_name", $videoName, PDO::PARAM_STR);
@@ -105,44 +108,27 @@ class GalleryVideos extends Database {
         return $buildQuery->execute();
     }
 
-        /**
-     * Méthode pour ajouter une vidéo en Base De Données
-     */
-    // public function addVideo(array $arrayParameters) {
-    //     $query = "INSERT INTO `gallery_videos` (`video_name`, `video_date`) VALUES (:video_name, :video_date);";
-    //     $buildQuery = parent::getDb()->prepare($query);
-    //     $buildQuery->bindValue("video_name", $arrayParameters["video_name"], PDO::PARAM_STR);
-    //     $buildQuery->bindValue("video_date", $arrayParameters["video_date"], PDO::PARAM_STR);
-    //     return $buildQuery->execute();
-    // }
-
-    // /**
-    //  * Méthode pour sélectionner toutes les vidéos en Base De Données
-    //  * 
-    //  *  @return array|boolean
-    //  */
-    // public function getAllVideos() {
-    //     $query = "SELECT `id`, `video_name`, `video_date`, `id_extensions_files` FROM `gallery_videos`;";
-    //     $buildQuery = parent::getDb()->prepare($query);
-    //     $buildQuery->execute();
-    //     $resultQuery = $buildQuery->fetchAll(PDO::FETCH_ASSOC);
-    //     if(!empty($resultQuery)) {
-    //         return $resultQuery;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-     
     /**
      * Méthode pour supprimer une vidéo 
      */
+    public function deleteVideo($nameVideo)
+    {
+        $query = "DELETE FROM `gallery_videos` WHERE `video_name` = :video_name";
+        $deleteVideo = parent::getDb()->prepare($query);
+        $deleteVideo->bindValue("video_name", $nameVideo, PDO::PARAM_STR);
+        return $deleteVideo->execute();
+    }
 
+
+    /**
+     * Méthode pour modifier le nom de l'image
+     */
 
     /**
      * Méthode pour trier les vidéos par date (de la plus récente à la plus vieille)
      */
 
-       /**
+    /**
      * Méthode pour sélectionner les vidéos selon un type extension
      */
 }

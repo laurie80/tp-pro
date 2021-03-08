@@ -36,8 +36,6 @@ if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] == 0 && i
         $GaleriePicture = new GalleryPictures();
         $extensionFile = strrchr($_FILES["fileToUpload"]["name"], ".");
         $id = $Extensions->getIdExtensions($extensionFile);
-        var_dump($id);
-        var_dump($extensionFile);
         $date = strftime("%Y-%m-%d", time());
         $nameImg = uniqid();
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], '../uploadImg/' . $nameImg . $extensionFile);

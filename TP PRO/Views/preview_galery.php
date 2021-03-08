@@ -33,6 +33,8 @@ require "../Controllers/preview_galery_controller.php";
         </div>
     </header>
 
+    <p class="title text-center">Bienvenue dans votre espace de gestion de galeries</p>
+
     <div class="row align-content-center justify-content-center">
         <p class="titleGalery">Galerie Photos</p>
         <div class="card-column col-10 m-auto">
@@ -47,15 +49,17 @@ require "../Controllers/preview_galery_controller.php";
                             </div>
                             <div class="infosFiles">
                                 <ul>
-                                    <li>Nom de l'image :</li>
-                                    <li>Date de la prise de vue :</li>
+                                    <li>Nom de l'image : </li>
+                                    <li>Date de mise en ligne :</li>
                                     <li>Extension de l'image :</li>
                                 </ul>
                             </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1">Supprimer</button>
-                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1">Modifier</button>
-                            </div>
+                            <form action="preview_galery.php" method="POST">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $image ?>">Supprimer</button>
+                                    <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1">Modifier</button>
+                                </div>
+                            </form>
                         </div>
                 <?php
                     }
@@ -84,10 +88,12 @@ require "../Controllers/preview_galery_controller.php";
                                     <li>Extension de l'image :</li>
                                 </ul>
                             </div>
-                            <div class="d-flex justify-content-center align-items-center">
-                                <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1">Supprimer</button>
-                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1">Modifier</button>
-                            </div>
+                            <form action="preview_galery.php" method="POST">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video ?>">Supprimer</button>
+                                    <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1">Modifier</button>
+                                </div>
+                            </form>
                         </div>
                 <?php
                     }

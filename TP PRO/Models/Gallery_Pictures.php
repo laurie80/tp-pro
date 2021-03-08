@@ -107,7 +107,12 @@ class GalleryPictures extends Database {
     /**
      * Méthode pour supprimer une image 
      */
-
+    public function deletePicture($nameImg){
+        $query = "DELETE FROM `gallery_pictures` WHERE `picture_name` = :picture_name";
+        $deletePicture = parent::getDb()->prepare($query);
+        $deletePicture->bindValue("picture_name" , $nameImg , PDO::PARAM_STR); 
+        return $deletePicture->execute();
+    }
     /**
      * Méthode pour trier les images par date (de la plus récente à la plus vieille)
      */
