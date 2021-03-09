@@ -119,7 +119,23 @@ class GalleryVideos extends Database
         return $deleteVideo->execute();
     }
 
-
+ /**
+     * Méthode pour récupérer le nom, la date et l'extension d'une video depuis la BDD
+     */
+    public function getInformationsVideo() {
+        $query = "SELECT `gallery_videos`.`id`,`video_name`,`video_title`, `video_date`, `type_extension`
+                  FROM `gallery_videos`
+                  INNER JOIN `extensions_files`
+                  ON `extensions_files`.`id` = `gallery_videos`.`id_extensions_files`;";
+        $buildQuery = parent::getDb()->prepare($query);
+        $buildQuery->execute();
+        $resultQuery = $buildQuery->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($resultQuery)) {
+            return $resultQuery;
+        } else {
+            return false;
+        }
+    }
     /**
      * Méthode pour modifier le nom de l'image
      */

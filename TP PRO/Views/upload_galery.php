@@ -20,8 +20,8 @@ require "../Controllers/upload_galery_controller.php";
         <nav>
             <div class="backdrop"></div>
             <ul>
-                <li><a class="navLink nav-link btn text-navbar" href="preview_galery.php">Accés galeries</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="../index.php">Retour sur le site</a></li>
+                <li><a class="navLink nav-link btn text-navbar" href="../index.php">Accueil site</a></li>
+                <li><a class="navLink nav-link btn text-navbar" href="preview_galery.php">Gestion galeries</a></li>
                 <li><a class="navLink nav-link btn text-navbar" href="upload_galery.php?action=disconnect">Deconnexion</a></li>
             </ul>
         </nav>
@@ -35,7 +35,7 @@ require "../Controllers/upload_galery_controller.php";
 
     <div class="row align-content-center justify-content-center" id="form">
 
-        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue <?= $_SESSION["admin"] ["userName"] ?>, dans votre espace de téléchargements</p>
+        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?>, dans votre espace de téléchargements</p>
 
         <form class="col-10 d-flex flex-wrap align-content-center justify-content-center m-3" action="upload_galery.php" method="post" enctype="multipart/form-data">
 

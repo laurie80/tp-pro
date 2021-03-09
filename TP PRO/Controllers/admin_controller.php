@@ -45,7 +45,7 @@ if (isset($_POST["connectAdmin"])) {
                 $admin["password"] = $resultQuery["admin_password"];
                 $admin["mail"] = $resultQuery["admin_mail"];
                 $_SESSION["admin"] = $admin;
-                header("Location: ../Views/upload_galery.php");
+                header("Location: ../Views/preview_galery.php");
             }
         } else {
             $arrayErrors["userName"] = "Vérifier vos informations de connexion";

@@ -20,8 +20,8 @@ require "../Controllers/preview_galery_controller.php";
         <nav>
             <div class="backdrop"></div>
             <ul>
-                <li><a class="navLink nav-link btn text-navbar" href="upload_galery.php">Gestion des téléchargements</a></li>
-                <li><a class="navLink nav-link btn text-navbar" href="../index.php">Retour sur le site</a></li>
+                <li><a class="navLink nav-link btn text-navbar" href="../index.php">Accueil site</a></li>
+                <li><a class="navLink nav-link btn text-navbar" href="upload_galery.php">Téléchargements fichiers</a></li>
                 <li><a class="navLink nav-link btn text-navbar" href="upload_galery.php?action=disconnect">Deconnexion</a></li>
             </ul>
         </nav>
@@ -40,7 +40,7 @@ require "../Controllers/preview_galery_controller.php";
         <div class="card-column col-10 m-auto">
             <div class="row">
                 <?php
-                foreach ($informationPicture as $picture) {
+                foreach ($informationsPicture as $picture) {
                 ?>
                     <div class="mx-auto">
                         <div>
@@ -72,29 +72,27 @@ require "../Controllers/preview_galery_controller.php";
         <div class="card-column col-10 m-auto">
             <div class="row">
                 <?php
-                foreach ($filesVideo as $video) {
-                    if (!is_dir("../uploadVideo/$video")) {
+                foreach ($informationsVideo as $video) {
                 ?>
-                        <div class="mx-auto">
-                            <div>
-                                <video class="boxVideos" src="../uploadVideo/<?= $video ?>" autoplay muted loop></video>
-                            </div>
-                            <div class="infosFiles">
-                                <ul>
-                                    <li>Nom de l'image :</li>
-                                    <li>Date de la prise de vue :</li>
-                                    <li>Type extension vidéo :</li>
-                                </ul>
-                            </div>
-                            <form action="preview_galery.php" method="POST">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video ?>">Supprimer</button>
-                                    <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1">Modifier</button>
-                                </div>
-                            </form>
+                    <div class="mx-auto">
+                        <div>
+                            <video class="boxVideos" src="../uploadVideo/<?= $video["video_name"] . $video["type_extension"] ?>" autoplay muted loop></video>
                         </div>
+                        <div class="infosFiles">
+                            <ul>
+                                <li>Nom de l'image : <?= $video["video_title"] ?></li>
+                                <li>Date de la prise de vue : <?= strftime("%d / %m / %Y", strtotime($video["video_date"])) ?></li>
+                                <li>Type extension vidéo : <?= $video["type_extension"] ?></li>
+                            </ul>
+                        </div>
+                        <form action="preview_galery.php" method="POST">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video["video_name"] . $video["type_extension"] ?>">Supprimer</button>
+                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1">Modifier</button>
+                            </div>
+                        </form>
+                    </div>
                 <?php
-                    }
                 }
                 ?>
             </div>

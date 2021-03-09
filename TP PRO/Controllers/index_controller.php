@@ -2,6 +2,17 @@
 
 session_start();
 
+require "Models/Database.php";
+require "Models/Gallery_Pictures.php";
+require "Models/Gallery_Videos.php";
+
+$Picture = new GalleryPictures();
+$Video = new GalleryVideos();
+
+$informationsPicture = $Picture->getInformationsImage();
+$informationsVideo = $Video->getInformationsVideo();
+
+
 /**
  * FORMULAIRE DE CONTACT
  */
@@ -76,13 +87,3 @@ if (isset($_POST["submitButton"])) {
         $message = "Une erreur s'est produite lors de l'envoi de votre message. Merci de renouveller votre demande.";
     }
 }
-
-/**
- * GALERIES PHOTOS ET VIDEOS
- */
-
-$dirImg = "uploadImg";
-$filesImg = scandir($dirImg);
-
-$dirVideo = "uploadVideo";
-$filesVideo = scandir($dirVideo);

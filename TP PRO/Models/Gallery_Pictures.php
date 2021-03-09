@@ -115,7 +115,7 @@ class GalleryPictures extends Database {
     }
 
   /**
-     * Méthode pour récupérer le nom, la date et l'extension d'une image en particulier depuis la BDD
+     * Méthode pour récupérer le nom, la date et l'extension d'une image depuis la BDD
      */
     public function getInformationsImage() {
         $query = "SELECT `gallery_pictures`.`id`,`picture_name`,`picture_title`, `picture_date`, `type_extension`

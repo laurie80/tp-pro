@@ -55,7 +55,5 @@ if (isset($_POST["deleteButtonVideo"])) {
     }
 }
 
-$dirVideo = "../uploadVideo";
-$filesVideo = scandir($dirVideo);
-
-$informationPicture = $Picture->getInformationsImage();
+$informationsPicture = $Picture->getInformationsImage();
+$informationsVideo = $Video->getInformationsVideo();

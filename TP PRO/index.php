@@ -82,14 +82,12 @@ require "Controllers/index_controller.php";
                 <h1 class="text-center col-12"><span class="titlePicture"></span></h1>
                 <div id="gridImgContainer">
                     <?php
-                    foreach ($filesImg as $image) {
-                        if (!is_dir("uploadImg/$image")) {
+                    foreach ($informationsPicture as $picture) {
                     ?>
-                            <div class="imgContainer">
-                                <img class="imgInContainer" src="uploadImg/<?= $image ?>">
-                            </div>
+                        <div class="imgContainer">
+                            <img class="imgInContainer" src="uploadImg/<?= $picture["picture_name"] . $picture["type_extension"] ?>">
+                        </div>
                     <?php
-                        }
                     }
                     ?>
                 </div>
