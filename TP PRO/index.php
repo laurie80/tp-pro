@@ -117,15 +117,13 @@ require "Controllers/index_controller.php";
                 <div class="card-column col-12 m-auto">
                     <div class="row">
                         <?php
-                        foreach ($filesVideo as $video) {
-                            if (!is_dir("uploadVideo/$video")) {
+                foreach ($informationsVideo as $video) {
                         ?>
                                 <div class="mx-auto">
-                                    <video class="boxVideos" src="uploadVideo/<?= $video ?>" autoplay muted loop></video>
+                                    <video class="boxVideos" src="uploadVideo/<?= $video["video_name"] . $video["type_extension"] ?>" autoplay muted loop></video>
                                 </div>
                         <?php
                             }
-                        }
                         ?>
                     </div>
                 </div>
