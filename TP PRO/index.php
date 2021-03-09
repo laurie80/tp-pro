@@ -69,7 +69,7 @@ require "Controllers/index_controller.php";
             <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 justify-content-center">
                 <h1 class="text-center col-12">A propos</h1>
                 <p class="text-presentation text-center col-12">Pilote professionnel de drones depuis plusieurs années,
-                    je propose de mettre à disposition mon matériel et mes services pour réaliser vos projets.</p>
+                    je vous propose de mettre à  votre disposition mes services pour réaliser vos projets.</p>
                 <p class="text-presentation text-center col-12">Je vous invite à parcourir les galeries photos et vidéos
                     afin de pouvoir
                     découvrir mon univers de travail mais aussi les drones que j'utilise.</p>

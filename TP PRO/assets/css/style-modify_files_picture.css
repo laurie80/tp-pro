@@ -1,0 +1,198 @@
+@font-face {
+    font-family: "bladesinger";
+    src: url("../fonts/bladesinger.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "AlexBrush-Regular";
+    src: url("../fonts/AlexBrush-Regular.ttf") format("truetype");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 200px;
+    display: inline-block;
+}
+
+#logoHeader {
+    max-width: 250px;
+    max-height: 250px;
+    position: absolute;
+    left: 43%;
+    top: 3rem;
+}
+
+.titleHeader {
+    position: absolute;
+    width: 20%;
+    top: 4.5rem;
+    right: 0px;
+    margin: 0;
+    color: white;
+    font-size: 1.5rem;
+    font-family: "bladesinger", sans-serif;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    font-size: 3.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    margin-right: 0;
+    margin-bottom: 2rem;
+    margin-left: 0;
+    font-family: "bladesinger", sans-serif;
+    color: #35d0ba;
+}
+
+.boxPicture {
+    margin: 1rem;
+    justify-content: center;
+    border: solid 1px white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.infosFiles {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.label {
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+input[type="file"] {
+    text-align: center;
+    color: white;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    background-color: #35d0ba;
+    border-radius: 30px;
+    color: #fcc200;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD PRO */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    #logoHeader {
+        left: 39%;
+    }
+
+    .titleHeader {
+        width: 25%;
+    }
+
+    .label {
+        font-size: 1.5rem;
+    }
+
+    input[type=file]::-webkit-file-upload-button {
+        font-size: 0.7rem;
+    }
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT IPAD */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+    #logoHeader {
+        left: 38%;
+        max-width: 175px;
+        max-height: 175px;
+    }
+
+    .titleHeader {
+        width: 25%;
+        font-size: 1.2rem;
+    }
+
+    .title {
+        font-size: 3.3rem;
+        margin-bottom: 2rem;
+    }
+
+    .boxPicture {
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+    .infosFiles {
+        font-size: 1.2rem;
+    }
+
+    .label {
+        font-size: 1rem;
+    }
+
+    input[type=file]::-webkit-file-upload-button {
+        font-size: 0.5rem;
+    }
+}
+
+/* MODIFICATION DE L ASPECT RESPONSIVE EN FORMAT SMARTPHONE */
+
+@media screen and (max-width: 480px) {
+
+    .header {
+        height: 100px;
+    }
+
+    #logoHeader {
+        max-width: 100px;
+        max-height: 100px;
+        top: 2rem;
+        left: 36%;
+    }
+
+    .titleHeader {
+        width: 30%;
+        font-size: 0.7rem;
+        top: 2rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .boxPicture {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+
+    input[type="file"] {
+        font-size: 0.7rem;
+    }
+
+    input[type=file]::-webkit-file-upload-button {
+        font-size: 0.3rem;
+    }
+}

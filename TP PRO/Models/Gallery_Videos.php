@@ -136,15 +136,5 @@ class GalleryVideos extends Database
             return false;
         }
     }
-    /**
-     * Méthode pour modifier le nom de l'image
-     */
-
-    /**
-     * Méthode pour trier les vidéos par date (de la plus récente à la plus vieille)
-     */
-
-    /**
-     * Méthode pour sélectionner les vidéos selon un type extension
-     */
+  
 }

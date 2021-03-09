@@ -55,5 +55,9 @@ if (isset($_POST["deleteButtonVideo"])) {
     }
 }
 
+/**
+ * Lancement des méthodes pour récupérer les informations en BDD des images et des vidéos
+ */
+
 $informationsPicture = $Picture->getInformationsImage();
 $informationsVideo = $Video->getInformationsVideo();

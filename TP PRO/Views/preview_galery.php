@@ -53,12 +53,14 @@ require "../Controllers/preview_galery_controller.php";
                                 <li>Type extension image :<?= $picture["type_extension"] ?></li>
                             </ul>
                         </div>
-                        <form action="preview_galery.php" method="POST">
-                            <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <form action="preview_galery.php" method="POST">
                                 <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $picture["picture_name"] . $picture["type_extension"] ?>">Supprimer</button>
-                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1">Modifier</button>
-                            </div>
-                        </form>
+                            </form>
+                            <form action="modify_files_picture.php" method="POST">
+                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1" value="<?= $picture["gallery_picture.id"]?>">Modifier</button>
+                            </form>
+                        </div>
                     </div>
                 <?php
                 }
@@ -80,17 +82,19 @@ require "../Controllers/preview_galery_controller.php";
                         </div>
                         <div class="infosFiles">
                             <ul>
-                                <li>Nom de l'image : <?= $video["video_title"] ?></li>
+                                <li>Nom de la vidéo : <?= $video["video_title"] ?></li>
                                 <li>Date de la prise de vue : <?= strftime("%d / %m / %Y", strtotime($video["video_date"])) ?></li>
                                 <li>Type extension vidéo : <?= $video["type_extension"] ?></li>
                             </ul>
                         </div>
-                        <form action="preview_galery.php" method="POST">
-                            <div class="d-flex justify-content-center align-items-center">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <form action="preview_galery.php" method="POST">
                                 <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video["video_name"] . $video["type_extension"] ?>">Supprimer</button>
-                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1">Modifier</button>
-                            </div>
-                        </form>
+                            </form>
+                            <form action="modify_files_video.php" method="POST">
+                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1" value="<?= $video["gallery_videos.id"]?>">Modifier</button>
+                            </form>
+                        </div>
                     </div>
                 <?php
                 }

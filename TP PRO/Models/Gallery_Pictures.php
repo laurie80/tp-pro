@@ -131,11 +131,17 @@ class GalleryPictures extends Database {
             return false;
         }
     }
-    /**
-     * Méthode pour trier les images par date (de la plus récente à la plus vieille)
-     */
 
-      /**
-     * Méthode pour sélectionner les images selon leur extension
+
+     /**
+     * Méthode pour modifier le nom de l'image en BDD et donc de le modifier à l'affichage sur la galerie de "preview_galery"
      */
+    public function modifyNamePicture($id , $pictureTitle){
+        $query = "UPDATE `gallery_pictures` SET `picture_title` = :picture_title WHERE `id` = :id";
+        $updatePicture = parent::getDb()->prepare($query);
+        $updatePicture->bindValue("id" , $id, PDO::PARAM_INT);
+        $updatePicture->bindValue("picture_title", $pictureTitle, PDO::PARAM_STR);
+        return $updatePicture->execute();
+    }
+
 }
