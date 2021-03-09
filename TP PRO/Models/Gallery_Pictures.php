@@ -113,6 +113,24 @@ class GalleryPictures extends Database {
         $deletePicture->bindValue("picture_name" , $nameImg , PDO::PARAM_STR); 
         return $deletePicture->execute();
     }
+
+  /**
+     * Méthode pour récupérer le nom, la date et l'extension d'une image en particulier depuis la BDD
+     */
+    public function getInformationsImage() {
+        $query = "SELECT `gallery_pictures`.`id`,`picture_name`,`picture_title`, `picture_date`, `type_extension`
+                  FROM `gallery_pictures`
+                  INNER JOIN `extensions_files`
+                  ON `extensions_files`.`id` = `gallery_pictures`.`id_extensions_files`;";
+        $buildQuery = parent::getDb()->prepare($query);
+        $buildQuery->execute();
+        $resultQuery = $buildQuery->fetchAll(PDO::FETCH_ASSOC);
+        if(!empty($resultQuery)) {
+            return $resultQuery;
+        } else {
+            return false;
+        }
+    }
     /**
      * Méthode pour trier les images par date (de la plus récente à la plus vieille)
      */

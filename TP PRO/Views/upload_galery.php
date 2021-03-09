@@ -35,7 +35,7 @@ require "../Controllers/upload_galery_controller.php";
 
     <div class="row align-content-center justify-content-center" id="form">
 
-        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue dans votre espace de téléchargements</p>
+        <p class="title col-lg-8 col-sm-10 text-center">Bienvenue <?= $_SESSION["admin"] ["userName"] ?>, dans votre espace de téléchargements</p>
 
         <form class="col-10 d-flex flex-wrap align-content-center justify-content-center m-3" action="upload_galery.php" method="post" enctype="multipart/form-data">
 
@@ -52,15 +52,6 @@ require "../Controllers/upload_galery_controller.php";
                     <label class="label" for="namePicture">Nom de l'image :</label>
                     <input id="namePicture" name="namePicture" type="text">
                 </div>
-                <!-- 
-                <div>
-                    <label class="label" for="pictureDate">Date de la prise de vue :</label>
-                    <input id="pictureDate" name="pictureDate" type="date" placeholder="Format : aaaa/mm/jj">
-                </div>
-                <div>
-                    <label class="label" for="typePicture">Type d'extension :</label>
-                    <input id="typePicture" name="typePicture" type="text" placeholder="Exemple : png">
-                </div> -->
                 <div>
                     <button type="submit" name="uploadButtonPicture" class="uploadButtonPicture">Envoyer</button>
                 </div>
@@ -82,15 +73,6 @@ require "../Controllers/upload_galery_controller.php";
                     <label class="label" for="nameVideo">Nom de la vidéo :</label>
                     <input id="nameVideo" name="nameVideo" type="text">
                 </div>
-                <!-- 
-                <div>
-                    <label class="label" for="videoDate">Date de la prise de vue :</label>
-                    <input id="videoDate" name="videoDate" type="date" placeholder="Format : aaaa/mm/jj">
-                </div>
-                <div>
-                    <label class="label" for="typeVideo">Type d'extension :</label>
-                    <input id="typeVideo" name="typeVideo" type="text" placeholder="Exemple : mp4">
-                </div> -->
                 <div>
                     <button type="submit" name="uploadButtonPicture" class="uploadButtonPicture">Envoyer</button>
                 </div>

@@ -21,16 +21,17 @@ if (isset($_POST["deleteButtonPicture"])) {
     $nameImg = htmlspecialchars($_POST["deleteButtonPicture"]);
     $nameFile = explode(".", $nameImg);
     $deletePicture = $Picture->deletePicture($nameFile[0]);
-}
 
-$imagesFiles = "../uploadImg/" . $nameImg;
 
-if (file_exists($imagesFiles)) {
-    if (unlink($imagesFiles)) {
-        $arrayErrors = $imagesFiles . "supprimer avec succés";
+    $imagesFiles = "../uploadImg/" . $nameImg;
+
+    if (file_exists($imagesFiles)) {
+        if (unlink($imagesFiles)) {
+            $arrayErrors = $imagesFiles . "supprimer avec succés";
+        }
+    } else {
+        $arrayErrors = "Echec de la suppression de" . $nameImg;
     }
-} else {
-    $arrayErrors = "Echec de la suppression de" . $nameImg;
 }
 
 /**
@@ -41,20 +42,20 @@ if (isset($_POST["deleteButtonVideo"])) {
     $nameVideo = htmlspecialchars($_POST["deleteButtonVideo"]);
     $nameFileVideo = explode(".", $nameVideo);
     $deleteVideo = $Video->deleteVideo($nameFileVideo[0]);
-}
 
-$videoFiles = "../uploadVideo/" . $nameVideo;
 
-if (file_exists($videoFiles)) {
-    if (unlink($videoFiles)) {
-        $arrayErrors = $videoFiles . "supprimer avec succés";
+    $videoFiles = "../uploadVideo/" . $nameVideo;
+
+    if (file_exists($videoFiles)) {
+        if (unlink($videoFiles)) {
+            $arrayErrors = $videoFiles . "supprimer avec succés";
+        }
+    } else {
+        $arrayErrors = "Echec de la suppression de" . $nameVideo;
     }
-} else {
-    $arrayErrors = "Echec de la suppression de" . $nameVideo;
 }
-
-$dirImg = "../uploadImg";
-$filesImg = scandir($dirImg);
 
 $dirVideo = "../uploadVideo";
 $filesVideo = scandir($dirVideo);
+
+$informationPicture = $Picture->getInformationsImage();

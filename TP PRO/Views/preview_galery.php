@@ -33,36 +33,34 @@ require "../Controllers/preview_galery_controller.php";
         </div>
     </header>
 
-    <p class="title text-center">Bienvenue dans votre espace de gestion de galeries</p>
+    <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?>, dans votre espace de gestion de galeries</p>
 
     <div class="row align-content-center justify-content-center">
         <p class="titleGalery">Galerie Photos</p>
         <div class="card-column col-10 m-auto">
             <div class="row">
                 <?php
-                foreach ($filesImg as $image) {
-                    if (!is_dir("../uploadImg/$image")) {
+                foreach ($informationPicture as $picture) {
                 ?>
-                        <div class="mx-auto">
-                            <div>
-                                <img class="boxPicture" src="../uploadImg/<?= $image ?>">
-                            </div>
-                            <div class="infosFiles">
-                                <ul>
-                                    <li>Nom de l'image : </li>
-                                    <li>Date de mise en ligne :</li>
-                                    <li>Extension de l'image :</li>
-                                </ul>
-                            </div>
-                            <form action="preview_galery.php" method="POST">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $image ?>">Supprimer</button>
-                                    <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1">Modifier</button>
-                                </div>
-                            </form>
+                    <div class="mx-auto">
+                        <div>
+                            <img class="boxPicture" src="../uploadImg/<?= $picture["picture_name"] . $picture["type_extension"] ?>">
                         </div>
+                        <div class="infosFiles">
+                            <ul>
+                                <li>Nom de l'image : <?= $picture["picture_title"] ?></li>
+                                <li>Date de mise en ligne : <?= strftime("%d / %m / %Y", strtotime($picture["picture_date"])) ?></li>
+                                <li>Type extension image :<?= $picture["type_extension"] ?></li>
+                            </ul>
+                        </div>
+                        <form action="preview_galery.php" method="POST">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $picture["picture_name"] . $picture["type_extension"] ?>">Supprimer</button>
+                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1">Modifier</button>
+                            </div>
+                        </form>
+                    </div>
                 <?php
-                    }
                 }
                 ?>
             </div>
@@ -85,7 +83,7 @@ require "../Controllers/preview_galery_controller.php";
                                 <ul>
                                     <li>Nom de l'image :</li>
                                     <li>Date de la prise de vue :</li>
-                                    <li>Extension de l'image :</li>
+                                    <li>Type extension vidéo :</li>
                                 </ul>
                             </div>
                             <form action="preview_galery.php" method="POST">
