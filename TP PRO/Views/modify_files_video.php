@@ -23,7 +23,7 @@ require "../Controllers/modify_files_video_controller.php";
         </div>
     </header>
 
-    <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?>, veuillez modifier le nom de votre fichier</p>
+    <p class="title text-center">Veuillez modifier le nom de votre fichier</p>
 
     <div class="mx-auto">
         <div class="text-center">

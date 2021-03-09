@@ -33,8 +33,8 @@ require "../Controllers/preview_galery_controller.php";
         </div>
     </header>
 
-    <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?>, dans votre espace de gestion de galeries</p>
-
+    <p class="title text-center">Bienvenue <?= $_SESSION["admin"]["userName"] ?></p>
+    <p class="title text-center">Gestion de galeries</p>
     <div class="row align-content-center justify-content-center">
         <p class="titleGalery">Galerie Photos</p>
         <div class="card-column col-10 m-auto">
@@ -58,7 +58,7 @@ require "../Controllers/preview_galery_controller.php";
                                 <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $picture["picture_name"] . $picture["type_extension"] ?>">Supprimer</button>
                             </form>
                             <form action="modify_files_picture.php" method="POST">
-                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1" value="<?= $picture["gallery_picture.id"]?>">Modifier</button>
+                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1" value="<?= $picture["gallery_picture.id"] ?>">Modifier</button>
                             </form>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ require "../Controllers/preview_galery_controller.php";
                                 <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video["video_name"] . $video["type_extension"] ?>">Supprimer</button>
                             </form>
                             <form action="modify_files_video.php" method="POST">
-                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1" value="<?= $video["gallery_videos.id"]?>">Modifier</button>
+                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1" value="<?= $video["gallery_videos.id"] ?>">Modifier</button>
                             </form>
                         </div>
                     </div>

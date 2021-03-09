@@ -118,7 +118,7 @@ ul li .navLink:hover {
 .title {
     text-align: center;
     color: white;
-    font-size: 3.8rem;
+    font-size: 4rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
     margin-right: 0;
     margin-bottom: 2rem;
@@ -128,10 +128,10 @@ ul li .navLink:hover {
 }
 
 .titleGalery {
-    font-size: 4rem;
-    color: #35d0ba;
+    font-size: 2.8rem;
+    color: #fcc200;
     margin: 1rem;
-    font-family: "bladesinger", sans-serif;
+    text-transform: uppercase;
 }
 
 .boxPicture {

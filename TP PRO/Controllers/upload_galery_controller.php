@@ -40,9 +40,10 @@ if (isset($_FILES['fileToUpload']) && $_FILES['fileToUpload']['error'] == 0 && i
         $nameImg = uniqid();
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], '../uploadImg/' . $nameImg . $extensionFile);
         $GaleriePicture->addPicture($nameImg, $date, $pictureTitle, $id["id"]);
-        echo '<script>alert("L\'image à bien était téléchargé !")</script>';
+        header("Location: ../Views/preview_galery.php");
+        $message = "Le fichier à bien était téléchargé !";
     } else {
-        echo '<script>alert("Format d\'image incorrect")</script>';
+        $message = "Une erreur est survenue lors du téléchargement";
     }
 }
 
@@ -69,9 +70,10 @@ if (isset($_FILES['fileVideoToUpload']) && $_FILES['fileVideoToUpload']['error']
         $nameVideo = uniqid();
         move_uploaded_file($_FILES['fileVideoToUpload']['tmp_name'], '../uploadVideo/' . $nameVideo . $extensionFile);
         $GalleryVideo->addVideo($nameVideo, $date, $videoTitle, $id["id"]);
-        echo '<script>alert("La vidéo à bien était téléchargé !")</script>';
+        header("Location: ../Views/preview_galery.php");
+        $message = "Le fichier à bien était téléchargé !";
     } else {
-        echo '<script>alert("Format de vidéo incorrect")</script>';
+        $message = "Une erreur est survenue lors du téléchargement";
     }
 }
 

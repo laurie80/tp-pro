@@ -33,7 +33,7 @@ require "Controllers/index_controller.php";
                     <li><a class="navLink nav-link btn text-navbar" href="#galleryVid">Vidéos</a></li>
                     <li><a class="navLink nav-link btn text-navbar" href="#equipments">Drones</a></li>
                     <li><a class="navLink nav-link btn text-navbar" href="#contact">Contact</a></li>
-                    <li><a class="navLink nav-link btn text-navbar" href="Views/upload_galery.php">Espace Admin</a></li>
+                    <li><a class="navLink nav-link btn text-navbar" href="Views/preview_galery.php">Espace Admin</a></li>
                 </ul>
             <?php
             } else {
