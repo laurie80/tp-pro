@@ -110,7 +110,7 @@ class GalleryPictures extends Database
     /**
      * Méthode pour supprimer une image 
      */
-    public function deletePicture($nameImg)
+    public function deletePicture(string $nameImg)
     {
         $query = "DELETE FROM `gallery_pictures` WHERE `picture_name` = :picture_name";
         $deletePicture = parent::getDb()->prepare($query);
@@ -161,7 +161,7 @@ class GalleryPictures extends Database
     /**
      * Méthode pour modifier le nom de l'image en BDD et donc de le modifier à l'affichage sur la galerie de "preview_galery"
      */
-    public function modifyNamePicture($id, $pictureTitle)
+    public function modifyNamePicture(int $id, string $pictureTitle)
     {
         $query = "UPDATE `gallery_pictures` SET `picture_title` = :picture_title WHERE `id` = :id";
         $updatePicture = parent::getDb()->prepare($query);

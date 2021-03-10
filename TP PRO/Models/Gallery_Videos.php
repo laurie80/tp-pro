@@ -111,7 +111,7 @@ class GalleryVideos extends Database
     /**
      * Méthode pour supprimer une vidéo 
      */
-    public function deleteVideo($nameVideo)
+    public function deleteVideo(string $nameVideo)
     {
         $query = "DELETE FROM `gallery_videos` WHERE `video_name` = :video_name";
         $deleteVideo = parent::getDb()->prepare($query);
@@ -142,7 +142,8 @@ class GalleryVideos extends Database
      */
     public function getOneVideoInformations(int $id)
     {
-        $query = "SELECT * FROM `gallery_videos` 
+        $query = "SELECT `gallery_videos`.`id`,`video_name`,`video_title`, `video_date`, `type_extension`
+                  FROM `gallery_videos` 
                   INNER JOIN `extensions_files`
                   ON `extensions_files`.`id` = `gallery_videos`.`id_extensions_files`
                   WHERE `gallery_videos`.`id` = :id;";
@@ -160,12 +161,12 @@ class GalleryVideos extends Database
         /**
      * Méthode pour modifier le nom de la vidéo en BDD et donc de le modifier à l'affichage sur la galerie de "preview_galery"
      */
-    public function modifyNameVideo($id, $videoTitle)
+    public function modifyNameVideo(int $id, string $videoTitle)
     {
         $query = "UPDATE `gallery_videos` SET `video_title` = :video_title WHERE `id` = :id";
         $updateVideo = parent::getDb()->prepare($query);
         $updateVideo->bindValue("id", $id, PDO::PARAM_INT);
-        $updateVideo->bindValue("Video_title", $videoTitle, PDO::PARAM_STR);
+        $updateVideo->bindValue("video_title", $videoTitle, PDO::PARAM_STR);
         return $updateVideo->execute();
     }
 }

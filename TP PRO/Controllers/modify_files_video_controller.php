@@ -13,4 +13,12 @@ $Video = new GalleryVideos();
 
 $id = isset($_POST["modifyButtonVideo"]) ? ($_POST["modifyButtonVideo"]) : "";
 
-$informationsVideo = $Video->getOneVideoInformations($id);
+if(isset($_POST["validateButtonFile"]) && !empty($_POST["validateButtonFile"])) {
+    $id = isset($_POST["validateButtonFile"]) ? ($_POST["validateButtonFile"]) : "";
+    $videoTitle = isset($_POST['newNameFile']) ? ($_POST["newNameFile"]) : "";
+    $updateNameFile = $Video->modifyNameVideo($id, $videoTitle);
+    header("Location: ../Views/preview_galery.php");
+} else {
+    $informationsVideo = $Video->getOneVideoInformations($id);
+}
+
