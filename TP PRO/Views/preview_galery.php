@@ -58,7 +58,7 @@ require "../Controllers/preview_galery_controller.php";
                                 <button type="submit" name="deleteButtonPicture" class="deleteButtonPicture btn btn-danger m-1" value="<?= $picture["picture_name"] . $picture["type_extension"] ?>">Supprimer</button>
                             </form>
                             <form action="modify_files_picture.php" method="POST">
-                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1" value="<?= $picture["gallery_picture.id"] ?>">Modifier</button>
+                                <button type="submit" name="modifyButtonPicture" class="modifyButtonPicture btn btn-info m-1" value="<?= $picture["id"] ?>">Modifier</button>
                             </form>
                         </div>
                     </div>

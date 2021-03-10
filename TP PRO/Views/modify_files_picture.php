@@ -25,13 +25,13 @@ require "../Controllers/modify_files_picture_controller.php";
 
     <p class="title text-center">Veuillez modifier le nom de votre fichier</p>
 
-    <div class="mx-auto">
+    <div class="mx-auto text-center">
         <div>
-            <img class="boxPicture" src="../uploadImg/<?= $picture["picture_name"] . $picture["type_extension"] ?>">
+            <img class="boxPicture" src="../uploadImg/<?= $informationsPicture["picture_name"] . $informationsPicture["type_extension"] ?>">
         </div>
         <div class="infosFiles">
             <ul>
-                <li>Nom de l'image :</li>
+                <li>Nom de l'image :<?= $informationsPicture["picture_title"]?></li>
             </ul>
         </div>
         <form action="modify_files_picture.php" method="POST">
@@ -41,7 +41,7 @@ require "../Controllers/modify_files_picture_controller.php";
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" name="validateButtonFile" class="validateButtonFile btn btn-danger m-1">Valider</button>
-                <button type="submit" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button>
+                <a href="../Views/preview_galery.php"><button type="button" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button></a>
             </div>
         </form>
     </div>

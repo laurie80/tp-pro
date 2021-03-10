@@ -11,8 +11,8 @@ require "../Models/Gallery_Videos.php";
 
 $Picture = new GalleryPictures();
 
-$informationsPicture = $Picture->getInformationsImage();
+$id = isset($_POST["modifyButtonPicture"]) ? ($_POST["modifyButtonPicture"]) : "";
 
-if (isset($_POST["returnButtonFile"])) {
-    header("Location: ../Views/preview_galery.php");
-}
+$informationsPicture = $Picture->getOneImageInformations($id);
+
+

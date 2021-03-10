@@ -120,7 +120,7 @@ class GalleryVideos extends Database
     }
 
  /**
-     * Méthode pour récupérer le nom, la date et l'extension d'une video depuis la BDD
+     * Méthode pour récupérer toutes les informations d'une vidéo 
      */
     public function getInformationsVideo() {
         $query = "SELECT `gallery_videos`.`id`,`video_name`,`video_title`, `video_date`, `type_extension`
@@ -136,5 +136,35 @@ class GalleryVideos extends Database
             return false;
         }
     }
-  
+
+        /**
+     * Méthode pour récupérer les informations d'une vidéo en particulier
+     */
+    public function getOneVideoInformations(int $id)
+    {
+        $query = "SELECT * FROM `gallery_videos` WHERE `id` = :id;";
+        $buildQuery = parent::getDb()->prepare($query);
+        $buildQuery->bindValue("id", $id, PDO::PARAM_INT);
+        $buildQuery->execute();
+        $resultQuery = $buildQuery->fetch(PDO::FETCH_ASSOC);
+        if (!empty($resultQuery)) {
+            return $resultQuery;
+        } else {
+            return false;
+        }
+    }
+
+        /**
+     * Méthode pour modifier le nom de la vidéo en BDD et donc de le modifier à l'affichage sur la galerie de "preview_galery"
+     */
+    public function modifyNameVideo($id, $videoTitle)
+    {
+        $query = "UPDATE `gallery_videos` SET `video_title` = :video_title WHERE `id` = :id";
+        $updateVideo = parent::getDb()->prepare($query);
+        $updateVideo->bindValue("id", $id, PDO::PARAM_INT);
+        $updateVideo->bindValue("Video_title", $videoTitle, PDO::PARAM_STR);
+        return $updateVideo->execute();
+    }
 }
+  
+
