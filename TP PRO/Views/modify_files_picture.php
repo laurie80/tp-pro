@@ -41,7 +41,7 @@ require "../Controllers/modify_files_picture_controller.php";
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" name="validateButtonFile" class="validateButtonFile btn btn-danger m-1">Valider</button>
-                <a href="../Views/preview_galery.php"><button type="button" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button></a>
+                <a href="preview_galery.php"><button type="button" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button></a>
             </div>
         </form>
     </div>

@@ -62,7 +62,3 @@ if (isset($_POST["deleteButtonVideo"])) {
 $informationsPicture = $Picture->getInformationsImage();
 $informationsVideo = $Video->getInformationsVideo();
 
-
-if (isset($_POST["modifyButtonPicture"])) {
-    header("Location: ../Views/modify_files_picture.php");
-}

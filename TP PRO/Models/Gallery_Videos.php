@@ -142,7 +142,10 @@ class GalleryVideos extends Database
      */
     public function getOneVideoInformations(int $id)
     {
-        $query = "SELECT * FROM `gallery_videos` WHERE `id` = :id;";
+        $query = "SELECT * FROM `gallery_videos` 
+                  INNER JOIN `extensions_files`
+                  ON `extensions_files`.`id` = `gallery_videos`.`id_extensions_files`
+                  WHERE `gallery_videos`.`id` = :id;";
         $buildQuery = parent::getDb()->prepare($query);
         $buildQuery->bindValue("id", $id, PDO::PARAM_INT);
         $buildQuery->execute();

@@ -11,8 +11,6 @@ require "../Models/Gallery_Videos.php";
 
 $Video = new GalleryVideos();
 
-$informationsVideo = $Video->getInformationsVideo();
+$id = isset($_POST["modifyButtonVideo"]) ? ($_POST["modifyButtonVideo"]) : "";
 
-if (isset($_POST["returnButtonFile"])) {
-    header("Location: ../Views/preview_galery.php");
-}
+$informationsVideo = $Video->getOneVideoInformations($id);

@@ -27,11 +27,11 @@ require "../Controllers/modify_files_video_controller.php";
 
     <div class="mx-auto">
         <div class="text-center">
-            <video class="boxVideos" src="../uploadVideo/" autoplay muted loop></video>
+            <video class="boxVideos" src="../uploadVideo/<?= $informationsVideo["video_name"] . $informationsVideo["type_extension"] ?>" autoplay muted loop></video>
         </div>
         <div class="infosFiles">
             <ul>
-                <li>Nom de la vidéo :</li>
+                <li>Nom de la vidéo :<?= $informationsVideo["video_title"] ?></li>
             </ul>
         </div>
         <form action="modify_files_video.php" method="POST">
@@ -41,7 +41,7 @@ require "../Controllers/modify_files_video_controller.php";
             </div>
             <div class="d-flex justify-content-center align-items-center">
                 <button type="submit" name="validateButtonFile" class="validateButtonFile btn btn-danger m-1">Valider</button>
-                <button type="submit" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button>
+                <a href="preview_galery.php"><button type="button" name="returnButtonFile" class="returnButtonFile btn btn-info m-1">Annuler</button><a>
             </div>
         </form>
     </div>

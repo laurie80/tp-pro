@@ -92,7 +92,7 @@ require "../Controllers/preview_galery_controller.php";
                                 <button type="submit" name="deleteButtonVideo" class="deleteButtonVideo btn btn-danger m-1" value="<?= $video["video_name"] . $video["type_extension"] ?>">Supprimer</button>
                             </form>
                             <form action="modify_files_video.php" method="POST">
-                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1" value="<?= $video["gallery_videos.id"] ?>">Modifier</button>
+                                <button type="submit" name="modifyButtonVideo" class="modifyButtonVideo btn btn-info m-1" value="<?= $video["id"] ?>">Modifier</button>
                             </form>
                         </div>
                     </div>
